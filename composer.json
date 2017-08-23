@@ -1,0 +1,6 @@
+{
+    "require": {
+        "twbs/bootstrap": "^3",
+        "zesk/zesk": "^0.9.30"
+    }
+}
