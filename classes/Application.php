@@ -133,4 +133,9 @@ class Application extends \zesk\Application {
 		// grant all privileges on zest.* TO zest@localhost IDENTIFIED BY 'zest';
 		// flush privileges;
 	}
+	
+	public function xmlrpc_server() {
+		$server = new Test_XMLRPC_Server($this);
+		$server->serve();
+	}
 }

@@ -10,16 +10,22 @@
 namespace zest;
 
 use xmlrpc\Server;
+use zesk\str;
 
 class Test_XMLRPC_Server extends Server {
-	function __construct($methods = null) {
-		parent::__construct($methods);
-		$this->registerMethod("capitalize", "string", "this:capitalize", array(
-			"string" => "string"
-		), "Capitalizes a word", array(
-			"string" => "String to capitalize"
-		));
-	}
+	protected $rpc_methods = array(
+		"capitalize" => array(
+			"string",
+			"this:capitalize",
+			array(
+				"string" => "string"
+			),
+			"Capitalizes a word",
+			array(
+				"string" => "String to capitalize"
+			)
+		)
+	);
 	function rpc_capitalize($string) {
 		return str::capitalize($string);
 	}

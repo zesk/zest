@@ -10,4 +10,4 @@ control/*
 	method=Zest::widget_test
 	arguments=["{request}","{response}"]
 xmlrpc
-	method="zest\\Test_XMLRPC_Server::serve"
+	method=["{application}","xmlrpc_server"]
